@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOCKVISION PREMIUM - Consola de Almacén</title>
+    
+    <link href="https://jsdelivr.net" rel="stylesheet">
+   
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <i class="bi bi-cpu-fill text-info icon-neon"></i>
+            <div>
+                <span class="brand-title">STOCKVISION</span>
+                <span class="brand-subtitle">Console V1.0</span>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <a href="#welcomeSection" class="menu-item active"><i class="bi bi-house-door-fill"></i> Inicio</a>
+            <a href="#dashboardContent" class="menu-item"><i class="bi bi-grid-3x3-gap-fill"></i> Hoja de Cálculo</a>
+        </div>
+        <div class="sidebar-footer">
+            <i class="bi bi-laptop text-info"></i> Monitor de PC Activo
+        </div>
+    </div>
+
+    
+    <div class="main-content">
+        
+        
+        <section id="welcomeSection" class="welcome-fullscreen-section d-flex align-items-center justify-content-center">
+            <div class="welcome-card text-center p-5">
+                <div class="badge-date mb-3">
+                    <i class="bi bi-calendar3 text-info me-2"></i><span id="currentDateStr"></span>
+                </div>
+                <h1 class="display-4 fw-bold mb-3" style="color: white !important;">¡Bienvenido a su Consola Central de Stock!</h1>
+                <p class="lead text-white-50 mb-4 max-w-text mx-auto">
+                    Visualice, audite y procese las métricas financieras de sus existencias en tiempo real mediante nuestra cuadrícula analítica inteligente de alta velocidad.
+                </p>
+                
+                <button class="btn btn-action-lg py-3 px-5 fs-5" onclick="scrollToCalculations()">
+                    <i class="bi bi-arrow-down-circle-fill me-2"></i> Ir a la Hoja de Cálculo
+                </button>
+            </div>
+        </section>
+
+        
+        <section id="dashboardContent" class="dashboard-section px-4 py-5">
+            
+            
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="kpi-card-premium p-4 d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="kpi-title">Inversión Total Stock</span>
+                            <h2 class="kpi-value" id="kpiTotalCost">S/. 0.00</h2>
+                        </div>
+                        <div class="kpi-icon-box bg-primary bg-opacity-10 text-primary">
+                            <i class="bi bi-cash-stack"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="kpi-card-premium p-4 d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="kpi-title">Ganancia Estimada</span>
+                            <h2 class="kpi-value text-success" id="kpiTotalProfit">S/. 0.00</h2>
+                        </div>
+                        <div class="kpi-icon-box bg-success bg-opacity-10 text-success">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="kpi-card-premium p-4 d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="kpi-title">Rentabilidad Promedio</span>
+                            <h2 class="kpi-value text-info" id="kpiAvgMargin">0.00%</h2>
+                        </div>
+                        <div class="kpi-icon-box bg-info bg-opacity-10 text-info">
+                            <i class="bi bi-percent"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                
+                <div class="col-xl-4">
+                    <div class="card panel-card-premium p-4">
+                        <h4 class="fw-bold mb-4 text-dark m-0"><i class="bi bi-plus-circle-fill text-info me-2"></i>Ingreso de Almacén</h4>
+                        <hr class="my-3 text-muted">
+                        <form id="stockForm" class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-secondary">Descripción del Producto</label>
+                                <input type="text" id="itemName" class="form-control custom-input" placeholder="Ej: Monitor Gamer 24''" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-secondary">Costo Unitario</label>
+                                <div class="input-group">
+                                    <span class="input-group-text custom-input-addon">S/.</span>
+                                    <input type="number" step="0.01" id="itemCost" class="form-control custom-input" placeholder="0.00" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-secondary">Precio Venta</label>
+                                <div class="input-group">
+                                    <span class="input-group-text custom-input-addon">S/.</span>
+                                    <input type="number" step="0.01" id="itemPrice" class="form-control custom-input" placeholder="0.00" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-secondary">Cantidad Física</label>
+                                <input type="number" id="itemQty" class="form-control custom-input" placeholder="Unidades" required>
+                            </div>
+                            <div class="col-12 pt-3">
+                                <button type="submit" class="btn btn-premium-submit w-100 py-3"><i class="bi bi-arrow-down-left-square-fill me-2"></i>Inyectar Datos al Almacén</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                
+                <div class="col-xl-8">
+                    <div class="card panel-card-premium p-0">
+                        <div class="p-4 d-md-flex align-items-center justify-content-between border-bottom border-light">
+                            <h4 class="fw-bold mb-3 mb-md-0 text-dark m-0"><i class="bi bi-grid-3x3-gap-fill text-info me-2"></i>Hoja de Cálculo Analítica</h4>
+                            <button class="btn btn-premium-excel py-2 px-4" onclick="exportExcelGrid()"><i class="bi bi-file-earmark-excel me-2"></i>Exportar Hoja (.CSV)</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table grid-excel-view align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="grid-header text-center" style="width: 60px;">Fila</th>
+                                        <th class="grid-header">Producto</th>
+                                        <th class="grid-header text-end">Cantidad</th>
+                                        <th class="grid-header text-end">Costo Unitario</th>
+                                        <th class="grid-header text-end">Precio Venta</th>
+                                        <th class="grid-header text-end table-primary-cell">Inversión Total</th>
+                                        <th class="grid-header text-end table-success-cell">Ganancia Proyectada</th>
+                                        <th class="grid-header text-center" style="width: 110px;">Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="excelTableBody">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

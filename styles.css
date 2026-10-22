@@ -1,0 +1,310 @@
+:root {
+    --deep-space: #0a1128;
+    --navy-blue: #001f54;
+    --electric-celeste: #0077b6;
+    --bright-celeste: #00b4d8;
+    --ice-blue: #e0f2fe;
+    --clean-white: #ffffff;
+    --soft-gray: #f8fafc;
+    --border-color: #cbd5e1;
+}
+
+* {
+    box-sizing: border-box !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f1f5f9;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: var(--deep-space);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-title {
+    color: var(--clean-white);
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.brand-subtitle {
+    color: var(--bright-celeste);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+}
+
+.icon-neon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 8px var(--bright-celeste));
+}
+
+.sidebar-menu {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.menu-item {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(0, 180, 216, 0.1);
+    color: var(--bright-celeste);
+}
+
+
+.menu-item.active {
+    background-color: var(--electric-celeste) !important;
+    color: var(--clean-white) !important;
+    box-shadow: 0 4px 10px rgba(0, 119, 182, 0.3);
+}
+
+.sidebar-footer {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+
+.main-content {
+    margin-left: 260px !important; 
+    padding: 0 !important;
+    min-height: 100vh;
+    width: calc(100% - 260px) !important;
+}
+
+
+.welcome-fullscreen-section {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy-blue), var(--deep-space));
+    color: var(--clean-white);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-section {
+    width: 100%;
+    padding: 40px;
+    background-color: #f1f5f9;
+}
+
+.welcome-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.badge-date {
+    background-color: rgba(0, 180, 216, 0.15);
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    padding: 6px 18px;
+    border-radius: 30px;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--bright-celeste);
+    font-size: 0.9rem;
+}
+
+.max-w-text {
+    max-width: 650px;
+}
+
+.btn-action-lg {
+    background: linear-gradient(90deg, var(--electric-celeste), var(--bright-celeste));
+    color: var(--clean-white);
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(0, 180, 216, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-action-lg:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 180, 216, 0.5);
+    color: var(--clean-white);
+}
+
+
+.kpi-card-premium {
+    background-color: var(--clean-white);
+    border: 1px solid var(--ice-blue);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 119, 182, 0.04);
+}
+
+.kpi-title {
+    color: #475569 !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.kpi-value {
+    font-weight: 800;
+    font-size: 1.65rem;
+    margin-top: 4px;
+    color: #0f172a !important;
+}
+
+.kpi-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.panel-card-premium {
+    background-color: var(--clean-white);
+    border: 1px solid rgba(0, 119, 182, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.custom-input {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    background-color: var(--clean-white);
+    color: #0f172a;
+}
+
+.custom-input-addon {
+    border: 1px solid var(--border-color);
+    background-color: var(--soft-gray);
+    color: #475569;
+    border-radius: 10px 0 0 10px !important;
+}
+
+.btn-premium-submit {
+    background: linear-gradient(90deg, var(--navy-blue), var(--electric-celeste));
+    color: var(--clean-white);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-premium-excel {
+    background-color: #107c41;
+    color: var(--clean-white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-premium-delete {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: 1px solid #fca5a5;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+}
+
+.btn-premium-delete:hover {
+    background-color: #ef4444;
+    color: var(--clean-white);
+}
+
+.grid-excel-view {
+    font-size: 0.9rem;
+}
+
+.grid-header {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+    font-weight: 700;
+    border: 1px solid #cbd5e1 !important;
+    padding: 12px 14px !important;
+}
+
+.grid-excel-view td {
+    border: 1px solid #e2e8f0;
+    padding: 12px 14px;
+    background-color: var(--clean-white);
+    color: #334155;
+}
+
+.excel-row-num {
+    background-color: var(--soft-gray) !important;
+    color: #94a3b8;
+    font-weight: 700;
+    border-right: 2px solid #cbd5e1 !important;
+}
+
+.table-primary-cell {
+    background-color: rgba(0, 180, 216, 0.05) !important;
+    color: var(--electric-celeste) !important;
+    font-weight: 600;
+}
+
+.table-success-cell {
+    background-color: rgba(16, 124, 65, 0.04) !important;
+    color: #107c41 !important;
+    font-weight: 600;
+}
+
+.low-stock-alert {
+    background-color: #fff1f2 !important;
+    color: #e11d48 !important;
+    font-weight: 700;
+}
