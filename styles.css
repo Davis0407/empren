@@ -95,7 +95,6 @@ body {
     color: var(--bright-celeste);
 }
 
-
 .menu-item.active {
     background-color: var(--electric-celeste) !important;
     color: var(--clean-white) !important;
@@ -116,6 +115,7 @@ body {
     padding: 0 !important;
     min-height: 100vh;
     width: calc(100% - 260px) !important;
+    transition: all 0.3s ease;
 }
 
 
@@ -265,6 +265,7 @@ body {
     color: var(--clean-white);
 }
 
+
 .grid-excel-view {
     font-size: 0.9rem;
 }
@@ -307,4 +308,76 @@ body {
     background-color: #fff1f2 !important;
     color: #e11d48 !important;
     font-weight: 700;
+}
+
+
+@media (max-width: 991.98px) {
+   
+    .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 15px 20px !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar-brand {
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+        gap: 8px !important;
+    }
+
+    .brand-title {
+        font-size: 1rem !important;
+    }
+
+    .brand-subtitle {
+        font-size: 0.65rem !important;
+    }
+
+    .sidebar-menu {
+        margin-top: 0 !important;
+        flex-direction: row !important;
+        gap: 5px !important;
+        flex-grow: 0 !important;
+    }
+
+    .menu-item {
+        padding: 8px 12px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .sidebar-footer {
+        display: none !important;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .welcome-fullscreen-section {
+        padding: 20px !important;
+        min-height: calc(100vh - 75px) !important;
+    }
+
+    .dashboard-section {
+        padding: 20px !important;
+    }
+
+    .welcome-card {
+        padding: 30px 20px !important;
+    }
+
+    .display-4 {
+        font-size: 2rem !important;
+    }
+
+    .kpi-value {
+        font-size: 1.4rem !important;
+    }
 }
